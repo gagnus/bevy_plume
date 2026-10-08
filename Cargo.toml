@@ -8,8 +8,8 @@ repository = "https://github.com/gagnus/bevy_plume"
 readme = "README.md"
 keywords = ["bevy", "ui", "gui", "immediate-mode", "widgets"]
 categories = ["game-development", "gui"]
-# bevy_immediate's MSRV, above bevy's 1.96.
-rust-version = "1.97"
+# bevy 0.20's MSRV, above bevy_immediate's 1.97.
+rust-version = "1.97.1"
 # README.md must stay in the package: lib.rs includes it for doctests. The README's
 # docs/*.png screenshots resolve against `repository` on crates.io.
 exclude = ["/docs", "/CLAUDE.md", "/.cargo", "/.github"]
