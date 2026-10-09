@@ -1,10 +1,12 @@
 //! Numeric abstraction letting the value controls bind to any builtin number
-//! type. Adapted from egui's `emath::Numeric` (MIT/Apache-2.0).
+//! type. Adapted from egui's `emath::Numeric` (MIT/Apache-2.0, copyright Emil Ernerfeldt).
 
 /// Implemented for all builtin numeric types.
 ///
 /// Values round-trip through `f32` because that is what bevy's [`SliderValue`]
 /// holds, so `f64`, `i64`/`u64` and `usize` lose precision beyond 24 bits.
+///
+/// A future version will store values as `f64` so they round-trip without loss.
 ///
 /// [`SliderValue`]: bevy::ui_widgets::SliderValue
 pub trait Numeric: Clone + Copy + PartialEq + PartialOrd + 'static {
