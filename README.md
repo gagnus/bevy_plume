@@ -5,7 +5,16 @@ Forked from `bevy_feathers` and diverging deliberately.
 
 Original code MIT OR Apache-2.0 (see LICENSE-MIT / LICENSE-APACHE).
 
-See CLAUDE.md for the design rules that distinguish Plume from feathers.
+Where it differs from feathers:
+
+- **Immediate mode front end.** Describe UI from an ordinary system each frame, egui
+  style; Plume keeps real bevy_ui entities on screen in step. The retained controls
+  underneath are there when you want them.
+- **Debug overlays first.** Movable dialogs over a running game are the primary
+  container, rather than a full editor shell.
+- **Controls work when dropped in.** Each control updates its own value with no
+  companion components, and apps import only `bevy_plume`, never the underlying
+  `bevy_ui_widgets` types.
 
 ## Installation
 
