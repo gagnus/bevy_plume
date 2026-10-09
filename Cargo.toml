@@ -1,6 +1,6 @@
 [package]
 name = "bevy_plume"
-version = "0.20.0"
+version = "0.1.0"
 edition = "2024"
 description = "Plume: bevy_ui controls with an immediate-mode front end, for game debug and editor UI"
 license = "MIT OR Apache-2.0"
@@ -15,11 +15,10 @@ rust-version = "1.97.1"
 exclude = ["/docs", "/CLAUDE.md", "/.cargo", "/.github"]
 
 [dependencies]
-# bevy umbrella (path dep on a local release-0.20.0 checkout until 0.20 ships).
-# default-features off keeps the pull lean: only the crates plume's controls
+# bevy umbrella. default-features off keeps the pull lean: only the crates plume's controls
 # reference are enabled. `ui_picking` forwards to bevy_ui + bevy_input_focus's
 # picking backends; `bevy_window` is what re-exports `bevy::a11y`.
-bevy = { path = "../3rdParty/bevy", default-features = false, features = [
+bevy = { version = "0.20", default-features = false, features = [
   "bevy_asset",
   "bevy_camera",
   "bevy_color",
@@ -35,9 +34,8 @@ bevy = { path = "../3rdParty/bevy", default-features = false, features = [
 ] }
 smol_str = { version = "0.2", default-features = false }
 
-# immediate-mode reconciler under `src/imm` (local bevy-0.20 checkout, its bevy deps
-# pointed at the checkout above)
-bevy_immediate = { path = "../3rdParty/bevy_immediate", default-features = false, features = [
+# immediate-mode reconciler under `src/imm`
+bevy_immediate = { version = "0.9", default-features = false, features = [
   "ui",
   "bevy_ui_widgets",
   "bevy_scene",
@@ -48,5 +46,5 @@ accesskit = "0.24"
 rand = "0.10.2"
 
 [dev-dependencies]
-bevy = { path = "../3rdParty/bevy", features = ["bevy_ui_widgets", "png"] }
+bevy = { version = "0.20", features = ["bevy_ui_widgets", "png"] }
 argh = "0.1.13"

@@ -7,21 +7,16 @@ Original code MIT OR Apache-2.0 (see LICENSE-MIT / LICENSE-APACHE).
 
 See CLAUDE.md for the design rules that distinguish Plume from feathers.
 
-## Local Dependencies (temporary)
+## Installation
 
-Plume targets Bevy 0.20, which is not yet released, so it currently builds against
-local checkouts:
+```toml
+[dependencies]
+bevy_plume = "0.1"
+```
 
-|Library|Branch|Path in `Cargo.toml`|
+|bevy_plume|bevy|bevy_immediate|
 |---|---|---|
-|bevy|release-0.20.0|../3rdParty/bevy|
-|bevy_immediate|bevy-0.20|../3rdParty/bevy_immediate|
-
-bevy_immediate's `bevy-0.20` branch takes bevy from crates.io, so also edit its
-workspace `Cargo.toml` to point each `bevy_*` dependency at `../bevy/crates/<name>`.
-Otherwise two copies of bevy end up in the build.
-
-You might be better off waiting until Bevy 0.20 is officially released to use it!
+|0.1|0.20|0.9|
 
 ## Quick start
 
